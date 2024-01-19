@@ -52,40 +52,39 @@
 <section class="my-6 mx-auto">
   <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
     <ng-container *ngFor="let sport of sportsList">
-    <div class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
-      <a
-        class="p-2 mx-auto"
-        routerLink="sports">
-        <img
-          class="h-auto max-w-full rounded-lg"
-          [src]="sport.strSportIconGreen"
-          alt="icon sport"
-        />
-      </a>
-    </div>
-  </ng-container>
+      <div
+        class="bg-green-100 w-40 mx-auto text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
+      >
+        <a class="p-2 mx-auto" routerLink="sports">
+          <img
+            class="h-auto max-w-full rounded-lg"
+            [src]="sport.strSportIconGreen"
+            alt="icon sport"
+          />
+        </a>
+      </div>
+    </ng-container>
   </div>
 </section>
 <!-- End Icon Section -->
 
-<!-- Section Carousel -->
-<section>
-  <div
-    id="animation-carousel"
-    class="relative w-full my-5"
-    data-carousel="static"
-  >
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+<!-- Section Gallery -->
+<section class="my-4">
+  <div id="gallery" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden md:h-96">
+      <!-- Item 1 -->
       <ng-container *ngFor="let sport of sportsList">
-        <div class="hidden duration-200 ease-linear p-4" data-carousel-item>
+        <div class="hidden duration-700 ease-in-out rounded-md" data-carousel-item>
           <img
             [src]="sport.strSportThumb"
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="img sports"
+            class="absolute block w-full h-5/6 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="img-sports"
           />
         </div>
       </ng-container>
     </div>
+    <!-- Slider controls -->
     <button
       type="button"
       class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
@@ -140,4 +139,4 @@
     </button>
   </div>
 </section>
-<!-- End Section Carousel -->
+<!-- End Section Gallery -->
