@@ -1,0 +1,26 @@
+<!-- Model Video Container -->
+<ng-container *ngIf="isOpen">
+  <div
+    id="back"
+    class="fixed flex top-0 left-0 h-svh w-svw justify-center items-center bg-opacity-55 bg-black -z-1"
+  >
+    <div class="bg-blue-chill-700 max-w-[70%] p-3 mx-auto rounded-md">
+      <div>
+        <div>
+          <h2 class="text-white">Video</h2>
+        </div>
+        <iframe
+          width="560"
+          height="315"
+          [src]="videoUrl"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<!-- End Modal Video Container -->

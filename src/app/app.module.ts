@@ -16,7 +16,13 @@ import { LicensingComponent } from './pages/licensing/licensing.component';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { RoutingModule } from './routing/routing.module';
 import { SportlistComponent } from './components/sportlist/sportlist.component';
-import { SportsIconsComponent } from './components/sports-icons/sports-icons.component';
+import { SportItemsComponent } from './components/sport-items/sport-items.component';
+import { SportItemComponent } from './components/sport-item/sport-item.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { SportComponent } from './pages/sport/sport.component';
+import { EventsSportComponent } from './pages/events-sport/events-sport.component';
+import { ModalComponent } from './shared/modal/modal.component';
+import { ModalVideoComponent } from './shared/modal-video/modal-video.component';
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import { SportsIconsComponent } from './components/sports-icons/sports-icons.com
     LicensingComponent,
     LayoutComponent,
     SportlistComponent,
-    SportsIconsComponent
+    SportItemsComponent,
+    SportItemComponent,
+    SliderComponent,
+    SportComponent,
+    EventsSportComponent,
+    ModalComponent,
+    ModalVideoComponent,
   ],
   imports: [
     BrowserModule,

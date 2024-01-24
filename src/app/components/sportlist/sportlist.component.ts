@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subject, Subscription, take, takeUntil } from 'rxjs';
 
 // Imports de entorno de desarrollo //
 import { Sport } from 'src/app/models/sport.model';
@@ -10,13 +11,27 @@ import { SportsService } from 'src/app/services/sports.service';
   styleUrls: ['./sportlist.component.css']
 })
 
-export class SportlistComponent {
+export class SportlistComponent implements OnDestroy{
   public sportsList: Sport[] = [];
+  private destroy$: Subject<boolean> = new Subject()
+
 
   constructor(private sportsServices: SportsService){
-    this.sportsServices.getSportList().subscribe( (sportList) => {
-      this.sportsList = sportList
-    } );
+
+    this.sportsServices
+      .getSportList()
+      .pipe(
+        takeUntil(this.destroy$)
+      )
+      .subscribe( (sportList) => {
+        console.log('lalalala', sportList.length)
+        this.sportsList = sportList
+      } );
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true)
+    this.destroy$.complete()
   }
 
 }

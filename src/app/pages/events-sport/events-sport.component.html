@@ -1,0 +1,93 @@
+<!-- Container Section Event List -->
+<ng-container *ngIf="eventsLeague; else modal">
+
+  <!-- Jumbo -->
+  <section class="bg-white dark:bg-gray-900 my-4 p-3">
+    <div
+      class="py-8 px-4 mx-auto max-w-screen-lg rounded-md text-center lg:py-16"
+    >
+      <h2
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+      >
+        {{ eventsLeague[0]?.strLeague }}
+      </h2>
+      <p
+        class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400"
+      >
+        Here at Flowbite we focus on markets where technology, innovation, and
+        capital can unlock long-term value and drive economic growth.
+      </p>
+    </div>
+  </section>
+  <!-- End Jumbo -->
+
+  <!-- Section Cards -->
+  <section class="grid grid-cols-4 my-10 p-4">
+    <!-- Article -->
+    <article *ngFor="let event of eventsLeague" class="flex">
+      <!-- Card -->
+      <div
+        class="max-w-sm m-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      >
+        <a>
+          <img
+            class="rounded-t-lg"
+            [src]="getThumbUrl(event.strThumb)"
+            alt="img-event"
+          />
+        </a>
+        <div class="p-5">
+          <a href="#">
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              {{ event.strEvent }}
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <span class="text-white">Event:</span>
+            {{ event.strFilename }}
+          </p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <span class="text-white">City:</span>
+            {{ event.strCity }}
+          </p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <span class="text-white">Country:</span>
+            {{ event.strCountry }}
+          </p>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <span class="text-white">Day:</span>
+            {{ event.dateEvent }}
+          </p>
+          <!-- Button -->
+          <button
+            *ngIf="event.strVideo"
+            (click)="openVideo(event.strVideo)"
+            class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
+            Highlight
+          </button>
+          <!-- End Button -->
+        </div>
+      </div>
+      <!-- End Card -->
+    </article>
+    <!-- End Article -->
+  </section>
+  <!-- End Section Cards -->
+
+</ng-container>
+<!-- End Section Event List -->
+
+<!-- Modal Message -->
+<ng-template #modal>
+  <modal [message]="modalMessage"> </modal>
+</ng-template>
+<!-- End Modal Message -->
+
+<!-- Modal Video -->
+  <modal-video #modalVideo
+  >
+  </modal-video>
+<!-- End Modal Video -->

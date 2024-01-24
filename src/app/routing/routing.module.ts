@@ -10,6 +10,8 @@ import { HomeComponent } from '../pages/home/home.component';
 import { LicensingComponent } from '../pages/licensing/licensing.component';
 import { PrivacyPolicyComponent } from '../pages/privacy-policy/privacy-policy.component';
 import { SportsComponent } from '../pages/sports/sports.component';
+import { SportComponent } from '../pages/sport/sport.component';
+import { EventsSportComponent } from '../pages/events-sport/events-sport.component';
 
 const routes: Routes = [
   {
@@ -21,8 +23,12 @@ const routes: Routes = [
     component: SportsComponent
   },
   {
-    path: 'sports/:id',
-    component: SportsComponent
+    path: 'sports/:strSport',
+    component: SportComponent
+  },
+  {
+    path: 'sports/:strSport/:idLeague',
+    component: EventsSportComponent
   },
   {
     path: 'about',
@@ -40,6 +46,7 @@ const routes: Routes = [
     path: 'licensing',
     component: LicensingComponent
   }
+
 ]
 
 @NgModule({
