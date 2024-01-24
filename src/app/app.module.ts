@@ -23,6 +23,7 @@ import { SportComponent } from './pages/sport/sport.component';
 import { EventsSportComponent } from './pages/events-sport/events-sport.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { ModalVideoComponent } from './shared/modal-video/modal-video.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ModalVideoComponent } from './shared/modal-video/modal-video.component'
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
 
   ],
   providers: [],
