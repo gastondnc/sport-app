@@ -24,6 +24,7 @@ import { EventsSportComponent } from './pages/events-sport/events-sport.componen
 import { ModalComponent } from './shared/modal/modal.component';
 import { ModalVideoComponent } from './shared/modal-video/modal-video.component';
 import { FormsModule } from '@angular/forms';
+import { SearchSportsComponent } from './components/search-sports/search-sports.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FormsModule } from '@angular/forms';
     EventsSportComponent,
     ModalComponent,
     ModalVideoComponent,
+    SearchSportsComponent,
   ],
   imports: [
     BrowserModule,
